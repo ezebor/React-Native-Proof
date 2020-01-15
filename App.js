@@ -28,13 +28,26 @@ import {
 const App: () => React$Node = () => {
   return (
     <View>
-      <Text>HALAAAAAAAA</Text>
+      <Text style={styles.welcome}>HALAAAAAAAAAA</Text>
       <Image 
         source={require('./assets/logo.png')}
-        style={{width:300, height:80}}
+        style={styles.logo}
       />
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  welcome: {
+    marginTop: 200,
+    width: 100,
+    color: 'white',
+    backgroundColor: 'blue',
+    justifyContent: 'flex-end'
+  },
+  logo: {
+    marginTop: 0
+  }
+})
 
 export default App;
