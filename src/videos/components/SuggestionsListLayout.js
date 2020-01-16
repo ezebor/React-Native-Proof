@@ -17,7 +17,7 @@ const SuggestionsListLayout = props => {
 const styles = StyleSheet.create({
     container: {
         paddingVertical: 10,
-        height: '25%'
+        height: '100%'
     },
     title: {
         color: '#4c4c4c',
