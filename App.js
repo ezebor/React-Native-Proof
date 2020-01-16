@@ -14,6 +14,7 @@ import {
 
 import Home from './src/screens/containers/Home';
 import Header from './src/sections/components/Header';
+import SuggestionsList from './src/videos/containers/SuggestionsList'
 
 import {
   LearnMoreLinks,
@@ -28,6 +29,7 @@ const App: () => React$Node = () => {
       <Header>
         <Button title="Ayuda"></Button>
       </Header>
+      <SuggestionsList />
     </Home>
   );
 };
