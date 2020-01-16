@@ -12,19 +12,27 @@ class SuggestionsList extends Component{
     render() {
         const list = [
             {
-                title: 'xika',
+                title: 'Harry Potter y la Piedra Filosofal',
+                channel: 'PlatziLab',
+                views: '230K vistas',
                 key: '0'
             },
             {
-                title: 'morbos',
+                title: 'Harry Potter y la Cámara Secreta',
+                channel: 'PlatziLab',
+                views: '230K vistas',
                 key: '1'
             },
             {
-                title: 'xabaaaaaan',
+                title: 'Harry Potter y el Prisionero de Askaban',
+                channel: 'PlatziLab',
+                views: '230K vistas',
                 key: '2'
             },
             {
-                title: 'puta',
+                title: 'Harry Potter y el Caliz de Fuego',
+                channel: 'PlatziLab',
+                views: '230K vistas',
                 key: '3'
             }
         ]
