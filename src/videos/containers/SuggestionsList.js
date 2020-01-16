@@ -3,7 +3,9 @@ import {
     FlatList,
     Text
 } from 'react-native';
-import Layout from '../components/SuggestionsListLayout'
+import Layout from '../components/SuggestionsListLayout';
+import SuggestionCardItem from '../components/SuggestionCardItem';
+import EmptySuggestionsList from '../components/EmptySuggestionsList';
 
 class SuggestionsList extends Component{
     render() {
@@ -21,8 +23,9 @@ class SuggestionsList extends Component{
             <Layout title = "Categorías">
                 <FlatList 
                     data = {list}
-                    renderItem = {({item}) => <Text>{item.title}</Text>}
+                    renderItem = {({item}) => <SuggestionCardItem item={item} />}
                     horizontal = {true}
+                    ListEmptyComponent = {() => <EmptySuggestionsList title="No hay sugerencias" />}
                 />
             </Layout>
         );
