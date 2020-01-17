@@ -17,6 +17,7 @@ import Home from './src/screens/containers/Home';
 import Header from './src/sections/components/Header';
 import SuggestionsList from './src/videos/containers/SuggestionsList'
 import MoviesList from './src/videos/containers/MoviesList';
+import Video from 'react-native-video';
 
 import {
   LearnMoreLinks,

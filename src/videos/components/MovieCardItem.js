@@ -18,9 +18,9 @@ const MovieCardItem = props => {
 
 const styles = StyleSheet.create({
     image: {
-        width: 200,
-        height: 120,
-        borderRadius: 10
+        resizeMode: 'cover',
+        width: 100,
+        borderRadius: 10,
     }
 })
 

@@ -9,21 +9,28 @@ const SuggestionsListLayout = props => {
     return (
         <View style = {styles.container}>
             <Text style = {styles.title} >{props.title}</Text>
-            {props.children}
+            <View style = {styles.children}>
+                {props.children}
+            </View>
         </View>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
-        paddingVertical: 10
+        paddingVertical: 10,
+        flex: 1,
+    },
+    children:{
+        flex: 5
     },
     title: {
         color: '#4c4c4c',
         fontSize: 20,
         marginBottom: 20,
         fontWeight: 'bold',
-        marginStart: 8
+        marginStart: 8,
+        flex: 1
     }
 })
 
