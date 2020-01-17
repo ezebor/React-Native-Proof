@@ -12,14 +12,16 @@ const SuggestionCardItem = props => {
         <View style={styles.container}>
             <View style={styles.leftContainer}>
                 <Image 
-                    source={require('../../../assets/logo.png')}
+                    source={{
+                        uri: props.item.medium_cover_image
+                    }}
                     style={styles.image}
                 />
             </View>
             <View style={styles.rightContainer}>
                 <Text style={styles.title}>{props.item.title}</Text>
-                <Text style={styles.channel}>{props.item.channel}</Text>
-                <Text style={styles.views}>{props.item.views}</Text>
+                <Text style={styles.year}>{props.item.year}</Text>
+                <Text style={styles.rating}>{props.item.rating}</Text>
             </View>
         </View>
     )
@@ -31,20 +33,21 @@ const styles = StyleSheet.create({
         height: 140
     },
     leftContainer: {
-        padding: 10,
         flex: 1,
+        backgroundColor: 'red',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'flex-start'
     },
     rightContainer: {
         paddingHorizontal: 10,
         paddingVertical: 20,
-        flex: 1.3,
+        flex: 3,
         justifyContent: 'space-between',
         alignItems: 'flex-start'
     },
     image: {
-        resizeMode: 'contain',
+        backgroundColor: 'blue',
+        resizeMode: 'cover',
         width: '100%',
         height: '100%'
     },
@@ -52,14 +55,14 @@ const styles = StyleSheet.create({
         fontSize: 18,
         color: '#44546b'
     },
-    channel: {
+    year: {
         backgroundColor: '#70b124',
         color: 'white',
         padding: 5,
         borderRadius: 8,
         overflow: 'hidden',
     },
-    views: {
+    rating: {
         fontWeight: 'bold',
         fontSize: 14,
         color: '#6b6b6b'

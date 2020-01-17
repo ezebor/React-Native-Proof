@@ -3,47 +3,34 @@ import {
     FlatList,
     Text
 } from 'react-native';
-import Layout from '../components/SuggestionsListLayout';
+import Layout from '../components/ListLayout';
 import SuggestionCardItem from '../components/SuggestionCardItem';
 import EmptySuggestionsList from '../components/EmptySuggestionsList';
-import VerticalSeparator from '../components/VerticalSeparator';
+import ListSeparator from '../components/ListSeparator';
+import api from '../../../utils/Api'
 
 class SuggestionsList extends Component{
-    render() {
-        const list = [
-            {
-                title: 'Harry Potter y la Piedra Filosofal',
-                channel: 'PlatziLab',
-                views: '230K vistas',
-                key: '0'
-            },
-            {
-                title: 'Harry Potter y la Cámara Secreta',
-                channel: 'PlatziLab',
-                views: '230K vistas',
-                key: '1'
-            },
-            {
-                title: 'Harry Potter y el Prisionero de Askaban',
-                channel: 'PlatziLab',
-                views: '230K vistas',
-                key: '2'
-            },
-            {
-                title: 'Harry Potter y el Caliz de Fuego',
-                channel: 'PlatziLab',
-                views: '230K vistas',
-                key: '3'
-            }
-        ]
+    state = {
+        suggestionsList: []
+    };
 
+    async componentDidMount() {
+        const suggestions = await api.getSuggestions(10);
+        this.setState({
+            suggestionsList: suggestions
+        })
+        console.log(suggestions);
+    }
+
+    render() {
         return (
             <Layout title = "Recomendamos">
                 <FlatList 
-                    data = {list}
+                    data = {this.state.suggestionsList}
+                    keyExtractor = {(item) => item.id}
                     renderItem = {({item}) => <SuggestionCardItem item={item} />}
                     ListEmptyComponent = {() => <EmptySuggestionsList title="No hay sugerencias" />}
-                    ItemSeparatorComponent = {() => <VerticalSeparator />}
+                    ItemSeparatorComponent = {() => <ListSeparator vertical = {true}/>}
                 />
             </Layout>
         );

@@ -16,13 +16,12 @@ const SuggestionsListLayout = props => {
 
 const styles = StyleSheet.create({
     container: {
-        paddingVertical: 10,
-        height: '100%'
+        paddingVertical: 10
     },
     title: {
         color: '#4c4c4c',
         fontSize: 20,
-        marginBottom: 10,
+        marginBottom: 20,
         fontWeight: 'bold',
         marginStart: 8
     }

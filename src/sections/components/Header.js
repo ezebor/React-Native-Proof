@@ -39,15 +39,16 @@ const styles = StyleSheet.create({
     leftContainer: {
         justifyContent: 'center',
         alignItems: 'flex-start',
-        width: '50%'
+        flex: 1,
     },
     rightContainer: {
         justifyContent: 'center',
         alignItems: 'flex-end',
-        width: '50%'
+        flex: 1,
     },
     icon: {
-        height: 26,
+        resizeMode: "contain",
+        height: '100%',
         width: 100
     }
 })
